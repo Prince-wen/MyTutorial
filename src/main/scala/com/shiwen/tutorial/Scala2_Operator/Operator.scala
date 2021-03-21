@@ -38,8 +38,13 @@ object Operator {
     //思考一个问题：如下代码执行结果如何？
     val a = new String("abc")
     val b = new String("abc")
-    println(a == b)
+    println(a == b)//false 在Java中==符号表示内存地址的比较
     println(a.equals(b))
+    //true 在Java中equals的方法在object中就是==，但是String重写了equals方法，
+    // 所以结果是重写的equals方法的结果，其实就是true
+
+    //但是在Scala中两个结果都是true，因为在Scala中==默认就是比较内容的equals。
+    //反而在Scala中，eq用于比较字符串的内存。
   }
 
   //todo 赋值运算符
@@ -59,6 +64,7 @@ object Operator {
    */
 
   //思考一个问题：为什么在上面的运算符中没有看到 ++， --？
+  //因为在运算和使用中，这样的符号有歧义，容易用错，可能造成错误。
 
   //todo 逻辑运算符
   /**
