@@ -32,5 +32,35 @@ object f_DataType {
    AnyRef : AnyRef类是Scala里所有引用类(reference class)的基类
 
    */
+   //todo 数据类型 - AnyVal
+   val b : Byte = 10
+   val s : Short = 10
+   val i : Int = 10
+   val l : Long = 10L
+   val f : Float = 1.0f
+   val d : Double = 1.0
+
+   val c : Char = 'A'
+   val flg : Boolean = true
+
+   //Unit 是一个类，对象只有一个：()
+   val u : Unit = ()
+
+   val U : Unit = test()
+   println(U)
+   def test(): Unit = {
+
+   }
+
+   //todo 数据类型 - AnyRef
+   val a = new Array[String](5)
+   //val b = new util.ArrayList()
+   //val u = new User()
+
+   //todo 类型省略
+   val ii = 10
+   //如果省略类型，整数默认为Int类型
+   val dd = 10.0
+   //如果省略类型，浮点类型默认为Double
 
 }
