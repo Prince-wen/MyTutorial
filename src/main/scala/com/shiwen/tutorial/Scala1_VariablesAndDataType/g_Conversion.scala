@@ -10,6 +10,7 @@ object g_Conversion {
   def main(args: Array[String]): Unit = {
 
     //todo 自动类型转化（隐式转换）
+    // implicit conversion
     val b : Byte = 10
     val s : Short = b
     val i : Int = s
@@ -18,6 +19,9 @@ object g_Conversion {
     //思考一个问题：如下代码是否正确？
     //      val c : Char = 'A' + 1
     //      println(c)
+
+    //  在Java中的结果是B，在Scala中是会报错的，但是可以执行，且结果与Java相同
+    //  在编译的时候就已经进行了处理。
 
     //todo 强制类型转化
     //	Java语言
