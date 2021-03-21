@@ -63,4 +63,18 @@ object f_DataType {
    val dd = 10.0
    //如果省略类型，浮点类型默认为Double
 
+   //todo Null
+   //scala 将null作为一个特殊的对象进行处理，类型就是null
+   val s1 = null
+   val ss : String = null
+   //AnyVal 类型是不能使用null赋值的
+   //val iii : Int = null
+   //todo nothing，没有值
+   val nil: Nil.type = Nil
+
+   //todo any
+   //任意类型
+   val aa : Any = "123"
+
+   //Unit(没有返回值)(void) => Nothing(无值)(exception)
 }
