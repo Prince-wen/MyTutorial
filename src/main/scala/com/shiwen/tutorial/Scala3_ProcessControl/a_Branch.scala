@@ -93,5 +93,22 @@ object a_Branch {
 
   /**
    * 思考一个问题: 怎么没有讲三元运算符？
+   * 首先，确实没有三元运算符
+   * 使用if...else来代替
+   *
+   * val age = 20
+   * val s : String = if (age < 20){
+   *    "zhangsan"
+   * } else {
+   *    "lisi"
+   * }
+   *
+   * 如果大括号中代码逻辑只有一行，那么可以省略
+   *
+   * val s = if (age < 20) "zhangsan" else "lisi"
+   *
+   * 如果一行代码中只有一段逻辑，那么可以省略分号，如果有多段逻辑，分号不能省略
+   * println("zhangsan");println("lisi")//可以使用分号，也可以分行
    */
+
 }
