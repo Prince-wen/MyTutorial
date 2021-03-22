@@ -29,6 +29,7 @@ object b_AdvancedOOP {
      */
 
     //todo 抽象
+/*
     	Scala将一个不完整的类称之为抽象类。
     abstract class Person {
     }
@@ -46,8 +47,10 @@ object b_AdvancedOOP {
     }
     class User extends Person {
       var name : String = "zhangsan"
-    }
-    6.2.4 单例对象
+    }*/
+
+    //todo 单例对象
+/*
     	所谓的单例对象，就是在程序运行过程中，指定类的对象只能创建一个，而不能创建多个。这样的对象可以由特殊的设计方式获得，也可以由语言本身设计得到，比如object伴生对象
     	Scala语言是完全面向对象的语言，所以并没有静态的操作（即在Scala中没有静态的概念）。但是为了能够和Java语言交互（因为Java中有静态概念），就产生了一种特殊的对象来模拟类对象，该对象为单例对象。若单例对象名与类名一致，则称该单例对象这个类的伴生对象，这个类的所有“静态”内容都可以放置在它的伴生对象中声明，然后通过伴生对象名称直接调用
     	如果类名和伴生对象名称保持一致，那么这个类称之为伴生类。Scala编译器可以通过伴生对象的apply方法创建伴生类对象。apply方法可以重载，并传递参数，且可由Scala编译器自动识别。所以在使用时，其实是可以省略的。
@@ -60,8 +63,13 @@ object b_AdvancedOOP {
     val user1 = new User()// 通过构造方法创建对象
     Val user2 = User.apply() // 通过伴生对象的apply方法构造伴生类对象
     val user3 = User() // scala编译器省略apply方法，自动完成调用
-    思考一个问题: Thread线程中wait方法和sleep方法的区别？
-    6.2.5 特质
+    */
+    /**
+     * 思考一个问题: Thread线程中wait方法和sleep方法的区别？
+     */
+
+    //todo 特质
+    /*
       Scala将多个类的相同特征从类中剥离出来，形成一个独立的语法结构，称之为“特质”（特征）。这种方式在Java中称之为接口，但是Scala中没有接口的概念。所以scala中没有interface关键字，而是采用特殊的关键字trait来声明特质, 如果一个类符合某一个特征（特质），那么就可以将这个特征（特质）“混入”到类中。这种混入的操作可以在声明类时使用，也可以在创建类对象时动态使用。
     1)	基本语法
     trait 特质名称
@@ -134,8 +142,13 @@ object b_AdvancedOOP {
     class MySQL extends DB with Log {
 
     }
-    思考一个问题: scala中的super是什么？
-    6.2.6 扩展
+*/
+    /**
+     * 思考一个问题: scala中的super是什么？
+     */
+
+    //todo 扩展
+/*
     	类型检查和转换
     class Person{
     }
@@ -185,11 +198,7 @@ object b_AdvancedOOP {
         var v : S = "abc"
       }
     }
-
-
-
-
-
+*/
 
 
   }
