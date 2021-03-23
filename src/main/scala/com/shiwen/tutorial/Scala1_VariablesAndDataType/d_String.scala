@@ -35,6 +35,8 @@ object d_String {
     // 插值字符串
     // 将变量值插入到字符串
     println(s"name=$name")
+    //完整的写法是有大括号的，并且在大括号中可以进行更复杂的操作
+    println(s"name=${name.substring(0,1)}")
   }
 
   //todo 4多行字符串
