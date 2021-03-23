@@ -7,7 +7,6 @@ package com.shiwen.tutorial.Scala4_FunctionalProgramming
  * @note 高阶函数编程
  */
 object e_FunctionalAdvenced {
-
   /**
    * 所谓的高阶函数，其实就是将函数当成一个类型来使用，而不是当成特定的语法结构。
    */
@@ -22,8 +21,12 @@ object e_FunctionalAdvenced {
   println(b)
   //如果不想使用下划线明确将函数作为整体使用，那么也可以直接声明变量的类型为
   //函数类型：参数列表 => 返回值类型
-//  val f1:()=>String = fun1
+//  val f11:()=>String = fun1 _
 
+  def ffff():String = {
+    "ffff"
+  }
+  val ff1 = ffff
   //todo 函数作为参数
   def fun2( i:Int ): Int = {
     i * 2
