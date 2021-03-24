@@ -23,10 +23,6 @@ object e_FunctionalAdvenced {
   //函数类型：参数列表 => 返回值类型
 //  val f11:()=>String = fun1 _
 
-  def ffff():String = {
-    "ffff"
-  }
-  val ff1 = ffff
   //todo 函数作为参数
   def fun2( i:Int ): Int = {
     i * 2
@@ -46,14 +42,17 @@ object e_FunctionalAdvenced {
   println(fun33()(10))
 
   //todo 匿名函数
+  //匿名函数规则： (参数列表)=> {代码逻辑}
   def fun4( f:Int => Int ): Int = {
     f(10)
   }
-  println(fun4((x:Int)=>{x * 20}))
-  println(fun4((x)=>{x * 20}))
-  println(fun4((x)=>x * 20))
-  println(fun4(x=>x * 20))
-  println(fun4(_ * 20))
+  //匿名函数的至简原则
+  println( fun4( (x:Int)=>{x * 20} ) )//参数类型可以推断，参数类型省略
+  println(fun4((x)=>{x * 20}))//代码逻辑只有一行，大括号省略
+  println(fun4((x)=>x * 20))//参数只有一个，括号省略
+  println(fun4(x=>x * 20))//函数中的参数在逻辑中只是用了一次，那么 “参数=>” 可以省略
+  println(fun4(_ * 20))//在匿名函数中使用下划线代替参数使用
+  //也可以将下划线理解为占位符，当存在 (x,y)=>(x+y)的时候，可以转换为(_+_)的形式
 
   //todo 闭包
   def fun5() = {

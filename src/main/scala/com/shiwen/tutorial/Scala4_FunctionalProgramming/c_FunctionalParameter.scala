@@ -18,6 +18,7 @@ object c_FunctionalParameter {
     fun7( "zhangsan", "lisi" )
 
     //可变参数不能放置在参数列表的前面，一般放置在参数列表的最后
+    //且只能有一个可变参数
 
     // Error
     //def fun77(names:String*, name:String): Unit = {
