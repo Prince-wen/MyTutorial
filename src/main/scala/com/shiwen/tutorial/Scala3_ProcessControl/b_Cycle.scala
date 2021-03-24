@@ -52,7 +52,7 @@ object b_Cycle {
     for ( i <- Range(1,5,2) ) {
       println("i = " + i )
     }
-    for ( i <- 1 to 5 by 2 ) {
+    for ( i <- 1 to 5 by 2 ) {//如果不加by关键字，会有一个默认的值1，相当于默认i++,如果想要反向循环的话，除了要把start，end更换，也要写by -1
       println("i = " + i )
     }
   }

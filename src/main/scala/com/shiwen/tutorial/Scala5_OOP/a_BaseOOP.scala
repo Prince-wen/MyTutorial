@@ -206,7 +206,7 @@ object a_BaseOOP {
      * Scala中的对象和Java是类似的
      */
     //val | var 对象名 [：类型]  = new 类型()
-    var user : User = new User()
+//    var user : User = new User()
 
     //todo 构造方法
     /**

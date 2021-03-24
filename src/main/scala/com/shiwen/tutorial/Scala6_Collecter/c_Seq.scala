@@ -84,9 +84,9 @@ object c_Seq {
     println( buffer5 eq buffer1 )
     println( buffer6 eq buffer1 )
 
-    val buffer7: ListBuffer[Int] = buffer1 - 2
+//    val buffer7: ListBuffer[Int] = buffer1 - 2
     val buffer8: ListBuffer[Int] = buffer1 -= 2
-    println( buffer7 eq buffer1 )
+//    println( buffer7 eq buffer1 )
     println( buffer8 eq buffer1 )
   }
 

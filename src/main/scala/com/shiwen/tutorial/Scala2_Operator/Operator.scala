@@ -110,6 +110,12 @@ object Operator {
    * 为了保证2^n，可以使得所有的插槽全都可以被利用到，否则将会损失内存空间
    *
    * 那如果不是2^n的值怎么快速计算位置，那就只能用%的方式对值进行计算，这样相对来说就会比hash的方式会慢一些
+   *
+   *
+   * 为什么重写类的时候要求同时重写equals和hashcode，
+   * 两个方法本质上没有联系，但是由于在HashMap结构中保存的时候，会根据HashMap判断数据保存的位置。
+   * 如果hashcode的值不相同，也就不会把数据放在同一个位置上，只有放在同一个位置上，且equals判断相等，才能判断是相同的对象。
+   * 这个问题在其他的结构中基本不存在。
    */
 
   //todo 运算符本质
@@ -119,7 +125,7 @@ object Operator {
    * 	当调用对象的方法时，点.可以省略
    * 	如果函数参数只有一个，或者没有参数，()可以省略
    */
-  def main(args: Array[String]): Unit = {
+  def main2(args: Array[String]): Unit = {
     val i : Int = 10
     val j : Int = i.+(10)
     val k : Int = j +(20)

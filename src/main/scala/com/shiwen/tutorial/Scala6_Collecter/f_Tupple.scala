@@ -28,7 +28,7 @@ object f_Tupple {
     // 根据索引访问元素
     tuple.productElement(0)
     // 获取整体
-    println(tuple.x)
+//    println(tuple.x)
 
     // 如果元组的元素只有两个，那么我们称之为对偶元组，也称之为键值对
     val kv: (String, Int) = ("a", 1)
