@@ -21,9 +21,9 @@ object a_BaseOOP {
      * 2)	扩展语法
      * Java中package包的语法比较单一，Scala对此进行扩展
      * 	Scala中的包和类的物理路径没有关系
-     * 	package关键字可以嵌套声明使用
+     * 	package关键字可以嵌套声明使用，使用大括号实现
      */
-    /* package com
+/*    package com
     package atguigu {
       package bigdata {
         package scala {
@@ -35,11 +35,10 @@ object a_BaseOOP {
         }
       }
     }*/
-
     /**
      * 	子包可以直接访问父包中的内容，而无需import
      */
-    /*package com
+/*    package com
     package atguigu {
       package bigdata {
         class Test {
@@ -53,11 +52,10 @@ object a_BaseOOP {
         }
       }
     }*/
-
     /**
      * 	Scala中package也可以看作对象，并声明属性和函数
      */
-    /*package com
+/*    package com
     package object atguigu {
       val name : String = "zhangsan"
       def test(): Unit = {
@@ -89,7 +87,6 @@ object a_BaseOOP {
       import java.util.ArrayList
       new ArrayList()
     }*/
-
     /**
      * 	Scala中可以导包，而不是导类
      */
@@ -97,7 +94,6 @@ object a_BaseOOP {
       import java.util
       new util.ArrayList()
     }*/
-
     /**
      * 	Scala中可以在同一行中导入多个类，简化代码
      */
@@ -110,6 +106,7 @@ object a_BaseOOP {
 
     /**
      * 	Scala中可以给类起别名，简化使用
+     *    type也可以给类起别名，且颜色会变
      */
     /*import java.util.{ArrayList=>AList}
 
@@ -121,6 +118,8 @@ object a_BaseOOP {
 
     /**
      * 	Scala中可以使用类的绝对路径而不是相对路径
+     *    Scala默认import是按照包的相对路径进行导入的。
+     *    双亲委派机制：
      */
     /*import _root_.java.util.ArrayList*/
 
