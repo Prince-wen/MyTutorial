@@ -1,5 +1,7 @@
 package com.shiwen.tutorial.Scala5_OOP
 
+import scala.beans.BeanProperty
+
 /**
  * @author Shiwen Li
  * @account CN116237626
@@ -8,9 +10,6 @@ package com.shiwen.tutorial.Scala5_OOP
  */
 object b_Class {
   def main(args: Array[String]): Unit = {
-    /**
-     * 静态
-     */
 
     //todo 类
     /**
@@ -36,20 +35,41 @@ object b_Class {
      * class User00 {
      *   var name : String = _
      *   val age : Int = 30
-     *   private val email : String = _
-     *   //@BeanPropetry var address : String = _
+     *   private var email : String = _
+     *   @BeanProperty //使用这个注解以后，默认的不遵守Bean规范的Scala生成的方法就会变成遵守Bean规范的方法
+     *   //也就是所有的get；set方法都是用get和set作为方法名开头
+     *   //且现在很多框架已经不遵循Bean规范了，因为反射的方式可以直接获取属性值，比如Spring自动装配=>自动完成两个对象的组合
+     *   var address : String = _
      * }
      */
 
     //todo 访问权限
     /**
+     * Java中的访问权限
+     * private  ：私有权限     同类
+     * default  ：包权限       同类，同包
+     * protected：受保护权限    同类，同包，子类
+     * public   ：公共权限     公共访问权限
      * Scala中的访问权限和Java中的访问权限类似，但是又有区别：
-     * private : 私有访问权限
-     * private[包名]: 包访问权限
-     * protected : 受保护权限
-     *        : 公共访问权限
+     * private : 私有访问权限       如果属性声明为private，那么编译器生成get，set方法时，也会使用private进行修饰。
+     *                              （且声明BeanProper使用时不能使用private权限）
+     * private[包名]: 包访问权限     同类，指定包及其子包
+     * protected : 受保护权限       同类，子类
+     *        : 公共访问权限        公共访问权限，Scala源文件中可以声明多个公共类
      *
-     * 思考一个问题: 你会调用java中的clone方法吗？
+     *
+     * 思考一个问题: 你会调用java中的clone方法吗？（探究子类权限的细节）
+     * 访问权限：权力和限制
+     * 方法的提供者：java.lang.Object
+     * 方法的调用者：com.shiwen.tutorial.Scala5_OOP.User
+     * 问题1： 方法的调用者不是b_Class
+     * 问题2： 点的作用？
+     * user.clone()
+     * //给user对象的name属性赋了一个值为张三
+     * user.name="zhangsan"
+     *
+     * 所以方法的调用者是：com.shiwen.tutorial.Scala5_OOP.b_Class
+     * 问题3： 方法的调用者没有被调用方法的权限。
      */
 
     //todo 方法
