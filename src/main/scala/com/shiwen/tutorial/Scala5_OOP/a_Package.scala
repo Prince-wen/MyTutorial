@@ -6,7 +6,7 @@ package com.shiwen.tutorial.Scala5_OOP
  * @create 2021-03-18 12:46
  * @note 面向对象编程 Object-Oriented Programming
  */
-object a_BaseOOP {
+object a_Package {
 
   /**
    * Scala是一门完全面向对象的语言，摒弃了Java中很多不是面向对象的语法。虽然如此，但其面向对象思想和Java的面向对象思想还是一致的
@@ -119,7 +119,12 @@ object a_BaseOOP {
     /**
      * 	Scala中可以使用类的绝对路径而不是相对路径
      *    Scala默认import是按照包的相对路径进行导入的。
-     *    双亲委派机制：
+     *    加载类时出现  双亲委派机制：
+     *      启动类加载器 <- 扩展类加载器 <- 应用类加载器    这里出现的关系是上下级关系
+     *      启动类加载器：加载jdk自带的类rt.jar      加载路径：jar包路径：%JAVA_HOME%/jre/lib/         类路径：%JAVA_HOME%/jre/classes
+     *      扩展类加载器：加载扩展的类库              加载路径：jar包路径：%JAVA_HOME%/jre/lib/ext/    类路径：%JAVA_HOME%/jre/ext/classes/
+     *      应用类加载器：环境变量classpath下的类     加载路径：jar包路径：当前目录                      类路径：当前目录
+     *      从下往上查找，从上往下委派
      */
     /*import _root_.java.util.ArrayList*/
 
@@ -133,96 +138,6 @@ object a_BaseOOP {
     /**
      * 思考一个问题: 导入对象？
      */
-
-    //todo 类
-    /**
-     * 面向对象编程中类可以看成一个模板，而对象可以看成是根据模板所创建的具体事物
-     * 1)	基本语法
-     */
-    // 声明类：访问权限 class 类名 { 类主体内容 }
-    class Userx {
-    }
-    // 对象：new 类名(参数列表)
-    new Userx()
-
-    /**
-     * 2)	扩展语法
-     * Scala中一个源文件中可以声明多个类
-     */
-
-    //todo 属性
-    /**
-     * 1)	基本语法
-     */
-    class User0 {
-      var name : String = _ // 类属性其实就是类变量
-      var age : Int = _ // 下划线表示类的默认初始化
-    }
-
-    /**
-     * 2)	扩展语法
-     * Scala中的属性其实在编译后也会生成方法
-     */
-
-    class User00 {
-      var name : String = _
-      val age : Int = 30
-//      private val email : String = _
-//      @BeanPropetry var address : String = _
-    }
-
-    //todo 访问权限
-    /**
-     * Scala中的访问权限和Java中的访问权限类似，但是又有区别：
-     * private : 私有访问权限
-     * private[包名]: 包访问权限
-     * protected : 受保护权限
-     *        : 公共访问权限
-     *
-     * 思考一个问题: 你会调用java中的clone方法吗？
-     */
-
-    //todo 方法
-    /**
-     * Scala中的类的方法其实就是函数，所以声明方式完全一样，但是必须通过使用对象进行调用
-     */
-    def main(args: Array[String]): Unit = {
-      val user = new User1
-      user.login("zhangsan", "000000")
-    }
-    class User1 {
-      def login( name:String, password:String ): Boolean = {
-        false
-      }
-    }
-
-    /**
-     * 思考两个问题: 还记得方法的重写和重载吗？ 你真的明白吗？
-     */
-
-    //todo 对象
-    /**
-     * Scala中的对象和Java是类似的
-     */
-    //val | var 对象名 [：类型]  = new 类型()
-//    var user : User = new User()
-
-    //todo 构造方法
-    /**
-     * 和Java一样，Scala中构造对象也需要调用类的构造方法来创建。
-     * 并且一个类中可以有任意多个不相同的构造方法。这些构造方法可以分为2大类：主构造函数和辅助构造函数。
-     */
-
-    class User() { // 主构造函数
-      var username : String = _
-      def this( name:String ) { // 辅助构造函数，使用this关键字声明
-        this() // 辅助构造函数应该直接或间接调用主构造函数
-        username = name
-      }
-      def this( name:String, password:String ) {
-        this(name) // 构造器调用其他另外的构造器，要求被调用构造器必须提前声明
-      }
-    }
 
   }
 }

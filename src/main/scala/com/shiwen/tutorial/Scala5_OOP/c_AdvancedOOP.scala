@@ -6,7 +6,7 @@ package com.shiwen.tutorial.Scala5_OOP
  * @create 2021-03-18 12:50
  * @note 高级面向对象编程 Advanced object oriented programming
  */
-object b_AdvancedOOP {
+object c_AdvancedOOP {
   def main(args: Array[String]): Unit = {
 
     //todo 继承
