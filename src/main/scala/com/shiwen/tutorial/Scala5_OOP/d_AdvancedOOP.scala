@@ -6,7 +6,7 @@ package com.shiwen.tutorial.Scala5_OOP
  * @create 2021-03-18 12:50
  * @note 高级面向对象编程 Advanced object oriented programming
  */
-object c_AdvancedOOP {
+object d_AdvancedOOP {
   def main(args: Array[String]): Unit = {
 
     //todo 继承
@@ -26,6 +26,7 @@ object c_AdvancedOOP {
      * 2)	提供一个公共的set方法，用于对属性赋值
      * 3)	提供一个公共的get方法，用于获取属性的值
      * 思考一个问题: 真的有这个必要吗？
+     * 可能不是很有必要，但是这样可以更加通用
      */
 
     //todo 抽象

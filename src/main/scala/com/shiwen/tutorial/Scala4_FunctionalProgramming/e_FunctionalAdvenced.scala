@@ -1,5 +1,7 @@
 package com.shiwen.tutorial.Scala4_FunctionalProgramming
 
+import scala.annotation.tailrec
+
 /**
  * @author Shiwen Li
  * @account CN116237626
@@ -149,7 +151,11 @@ object e_FunctionalAdvenced {
    * 递归函数-尾递归
    * 递归的方法不依赖于其他外部变量
    * 编译器碰见尾递归操作时会自动优化为while循环
+   *
+   * 可以使用注解@tailrec尾递归，强制让函数声明为尾递归，此时编译器会辅助判断函数是否是尾递归，如果不是，将会报错
+   * 如果已经写出正确的尾递归函数，则此注解并没有影响
    */
+  @tailrec
   def tailRecursion( i : Int, result : Int ):Int ={
     if (i <= 1) {
       result
