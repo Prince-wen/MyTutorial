@@ -39,10 +39,13 @@ object d_AdvancedOOP {
       def test():Unit
     }
     	Scala中如果一个属性只有声明没有初始化，那么是抽象属性，因为它不完整。
+     通过子类继承抽象类，并将其中抽象属性补充完整，就可以构建对象。
     abstract class Person {
       var name:String
     }
     	子类如果继承抽象类，必须实现抽象方法或补全抽象属性，否则也必须声明为抽象的，因为依然不完整。
+     如果子类重写父类的抽象方法，需要直接补充完整即可。（或采用override关键字修饰。）
+     但如果子类重写父类的完整方法，需要使用override关键字修饰。
     abstract class Person {
       var name:String
     }
