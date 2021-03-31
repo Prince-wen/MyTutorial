@@ -128,11 +128,11 @@ object j_Method {
     // 集合扁平映射
     println("flatMap =>" + list1.flatMap(list=>list))
     // 集合过滤数据
-    println("filter =>" + list.filter(_%2 == 0))
-    // 集合分组数据
-    println("groupBy =>" + list.groupBy(_%2))
-    // 集合排序
-    println("sortBy =>" + list.sortBy(num=>num)(Ordering.Int.reverse))
-    println("sortWith =>" + list.sortWith((left, right) => {left < right}))
+//    println("filter =>" + list.filter(_%2 == 0))
+//    // 集合分组数据
+//    println("groupBy =>" + list.groupBy(_%2))
+//    // 集合排序
+//    println("sortBy =>" + list.sortBy(num=>num)(Ordering.Int.reverse))//可以使用函数柯里化
+//    println("sortWith =>" + list.sortWith((left, right) => {left < right}))//
   }
 }
