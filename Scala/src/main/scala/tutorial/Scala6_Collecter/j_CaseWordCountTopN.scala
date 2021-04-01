@@ -9,7 +9,7 @@ import scala.io.Source
  * @note 案例，文字统计前n个
  *       wordcounttopN
  */
-object k_CaseWordCountTopN {
+object j_CaseWordCountTopN {
   def main(args: Array[String]): Unit = {
 
     val list: List[String] = Source.fromFile("input/word.txt").getLines().toList

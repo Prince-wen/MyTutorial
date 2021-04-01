@@ -6,7 +6,7 @@ package tutorial.Scala6_Collecter
  * @create 2021-03-23 12:21
  * @note 常用方法
  */
-object j_Method {
+object i_Method {
 
   //todo 1)	常用方法
   def main1(args: Array[String]): Unit = {

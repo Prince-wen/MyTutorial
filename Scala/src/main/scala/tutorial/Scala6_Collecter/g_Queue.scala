@@ -6,7 +6,7 @@ package tutorial.Scala6_Collecter
  * @create 2021-03-23 12:14
  * @note 队列
  */
-object h_Queue {
+object g_Queue {
   def main(args: Array[String]): Unit = {
     /**
      * Scala也提供了队列（Queue）的数据结构，队列的特点就是先进先出。进队和出队的方法分别为enqueue和dequeue。

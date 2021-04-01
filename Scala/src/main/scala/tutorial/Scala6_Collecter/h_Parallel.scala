@@ -6,7 +6,7 @@ package tutorial.Scala6_Collecter
  * @create 2021-03-23 12:17
  * @note 并行
  */
-object i_Parallel {
+object h_Parallel {
   def main(args: Array[String]): Unit = {
     /**
      * Scala为了充分使用多核CPU，提供了并行集合（有别于前面的串行集合），用于多核环境的并行计算。
