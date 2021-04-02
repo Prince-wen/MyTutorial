@@ -17,6 +17,9 @@ object c_Regulation {
   }
 
   //todo 匹配类型
+  //下划线的作用省略参数，因为逻辑中不适用餐宿，所以省略参数，
+  //但是需要这个参数，那么可以起个名字
+  //类型匹配不考虑泛型
   def describe2(x: Any) = x match {
     case i: Int => "Int"
     case s: String => "String hello"

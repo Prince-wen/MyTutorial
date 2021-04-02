@@ -23,5 +23,12 @@ object a_Overview {
 //      break;
 //    }
 
+    /**
+     * Java中的switch具有穿透现象，
+     * 所有的匹配项进入之后都需要break，否则都会向下穿透执行。
+     *
+     * Scala中的match case不具有穿透现象，
+     * 使用下划线_代替Java中的default
+     */
   }
 }
