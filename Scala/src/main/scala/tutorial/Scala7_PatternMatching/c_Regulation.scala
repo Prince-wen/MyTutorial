@@ -114,4 +114,21 @@ object c_Regulation {
     }
   }
 
+  //应用实例一：
+  val map: Map[String, (String, Int)] = Map("a" -> ("aa", 1), "b" -> ("bb", 2))
+  map.foreach{
+    case (pri,(item,count)) => {
+      println(count)
+    }
+  }
+
+  //应用实例二：
+  val list = List( ("a",1),("b",2),("c",3) )
+  val newList: List[(String, Int)] = list.map {
+    case (word, count) => {
+      (word, count * 2)
+    }
+  }
+  print(newList)
+
 }
