@@ -20,7 +20,7 @@ class Test[A] {
 //Scala的泛型可以根据功能进行改变
 
 //todo 泛型不可变
-class ScalaGeneric1 {
+object ScalaGeneric1 {
   def main(args: Array[String]): Unit = {
 
     val test1 : Test[User] = new Test[User] // OK
@@ -39,7 +39,7 @@ class ScalaGeneric1 {
 }
 
 //todo 泛型协变
-class ScalaGeneric2 {
+object ScalaGeneric2 {
   def main(args: Array[String]): Unit = {
 
     val test1 : Test[User] = new Test[User] // OK
@@ -58,7 +58,7 @@ class ScalaGeneric2 {
 }
 
 //todo 泛型逆变
-class ScalaGeneric3 {
+object ScalaGeneric3 {
   def main(args: Array[String]): Unit = {
 
     val test1 : Test[User] = new Test[User] // OK
@@ -78,7 +78,7 @@ class ScalaGeneric3 {
 
 //todo 泛型边界
 //Scala的泛型可以根据功能设定类树的边界
-class ScalaGeneric4 {
+object ScalaGeneric4 {
   def main(args: Array[String]): Unit = {
     val parent : Parent = new Parent()
     val user : User = new User()
@@ -99,12 +99,12 @@ class ScalaGeneric4 {
 }
 
 //todo 泛型上限
-class ScalaGeneric5 {
+object ScalaGeneric5 {
   def main(args: Array[String]): Unit = {
     val parent : Parent = new Parent()
     val user : User = new User()
     val subuser : SubUser = new SubUser()
-    test[Parent](parent) // Error
+//    test[Parent](parent) // Error
     test[User](user)   // OK
     test[SubUser](subuser) // OK
   }
@@ -120,14 +120,14 @@ class ScalaGeneric5 {
 }
 
 //todo 泛型下限
-class ScalaGeneric6 {
+object ScalaGeneric6 {
   def main(args: Array[String]): Unit = {
     val parent : Parent = new Parent()
     val user : User = new User()
     val subuser : SubUser = new SubUser()
     test[Parent](parent) // OK
     test[User](user)   // OK
-    test[SubUser](subuser) // Error
+//    test[SubUser](subuser) // Error
   }
   def  test[A>:User]( a : A ): Unit = {
     println(a)
@@ -144,7 +144,7 @@ class ScalaGeneric6 {
 //上下文限定是将泛型和隐式转换的结合产物，以下两者功能相同，
 // 使用上下文限定[A : Ordering]之后，方法内无法使用隐式参数名调用隐式参数，
 // 需要通过implicitly[Ordering[A]]获取隐式变量，如果此时无法查找到对应类型的隐式变量，会发生出错误。
-class ScalaGeneric7 {
+object ScalaGeneric7 {
   def main(args: Array[String]): Unit = {
     def f[A : Test](a: A) = println(a)
     implicit val test : Test[User] = new Test[User]
