@@ -18,7 +18,7 @@ object f_WordCount2 {
 
     val sc: SparkContext = new SparkContext(sparkConf)
 
-    val lines: RDD[String] = sc.textFile("input/words.txt")
+    /*val lines: RDD[String] = sc.textFile("input/words.txt")
 
     val word: RDD[String] = lines.flatMap(lines => lines.split(" "))
 
@@ -26,7 +26,14 @@ object f_WordCount2 {
 
     val result: RDD[(String, Int)] = map.reduceByKey(_ + _)
 
-    result.collect().foreach(println)
+    result.collect().foreach(println)*/
+
+    sc.textFile("input/words.txt")
+      .flatMap(lines => lines.split(" "))
+      .map(word => (word, 1))
+      .reduceByKey(_ + _)
+      .collect()
+      .foreach(println)
 
     sc.stop()
 
