@@ -1,4 +1,4 @@
-package tutorial.SparkCore.Spark03_Programming
+package tutorial.SparkCore.Spark03_ProgrammingWithRDD
 
 /**
  * @author Shiwen Li
@@ -23,11 +23,5 @@ object d_RDD3_Implement {
     从以上流程可以看出RDD在整个流程中主要用于将逻辑进行封装，并生成Task发送给Executor节点执行计算，接下来我们就一起看看Spark框架中RDD是具体是如何进行数据处理的。
 
      */
-
-    //IO体现了装饰着设计模型，可以让功能进行叠加（扩展）
-    //IO不是构建对象时就完成数据的读取，而是在调用读取的功能时才会真正的读取，类似于延迟加载
-    //IO中的类具有相同的行为，所以可以返回相同类型的对象。
-    //summary
-    //todo RDD的执行原理和IO是基本一致的
   }
 }

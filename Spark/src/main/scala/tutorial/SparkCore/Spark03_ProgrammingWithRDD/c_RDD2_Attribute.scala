@@ -1,4 +1,4 @@
-package tutorial.SparkCore.Spark03_Programming
+package tutorial.SparkCore.Spark03_ProgrammingWithRDD
 
 /**
  * @author Shiwen Li
@@ -7,6 +7,15 @@ package tutorial.SparkCore.Spark03_Programming
  * @note 核心属性
  */
 object c_RDD2_Attribute {
+  /**
+   *  - A list of partitions
+   *  - A function for computing each split
+   *  - A list of dependencies on other RDDs
+   *  - Optionally, a Partitioner for key-value RDDs (e.g. to say that the RDD is hash-partitioned)
+   *  - Optionally, a list of preferred locations to compute each split on (e.g. block locations for
+   *    an HDFS file)
+   * @param args
+   */
   def main(args: Array[String]): Unit = {
     /*
     	分区列表（数据数据哪个分区）
