@@ -1,0 +1,10 @@
+提交流程
+
+Spark应用程序提交到Yarn环境中执行的时候，一般会有两种部署执行的方式：Client和Cluster。
+两种模式，主要区别在于：Driver程序的运行节点。
+
+Yarn Client模式
+Client模式将用于监控和调度的Driver模块在客户端执行，而不是Yarn中，所以一般用于测试。
+
+Yarn Cluster模式
+Cluster模式将用于监控和调度的Driver模块启动在Yarn集群资源中执行。一般应用于实际生产环境。

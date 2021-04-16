@@ -2,3 +2,5 @@ Spark框架的核心是一个计算引擎，整体来说，它采用了标准 ma
 如下图(a_Architecture)所示，它展示了一个 Spark执行时的基本结构。
 图形中的Driver表示master，负责管理整个集群中的作业任务调度。
 图形中的Executor 则是 slave，负责实际执行任务。
+
+standalone模式和Yarn模式不同。

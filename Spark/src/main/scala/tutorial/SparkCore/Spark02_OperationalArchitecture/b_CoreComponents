@@ -1,0 +1,22 @@
+Spark组成
+
+Driver
+驱动整个程序运行起来的程序，也称之为Driver类
+
+Executor
+Spark Executor是集群工作节点（worker）中的一个JVM进程，负责在Spark作业中运行具体的任务（Task），
+任务彼此之间相互独立。Spark任务启动时，Executor节点被同时启动。
+如果某个Executor节点因为错误或故障而崩溃，Spark应用也可以继续执行，会将出错的任务调度到其他Executor节点上继续运行。
+两个核心功能：
+1.负责运行组成Spark应用的任务，并将结果返回给驱动器进程。
+2.应用自身的块管理器（Block Manager）为用户程序中要求缓存的RDD提供内存式存储。
+RDD是直接缓存在Executor进程内的，因此任务可以在运行时充分利用缓存数据加速运算。
+
+Spark Standalone模式的组件
+Master & Worker
+
+Yarn中独有的组件
+ApplicationMaster（解耦合）
+Yarn -> ApplicationMaster -> Spark Driver
+实现了Yarn的计算引擎的可插拔
+
