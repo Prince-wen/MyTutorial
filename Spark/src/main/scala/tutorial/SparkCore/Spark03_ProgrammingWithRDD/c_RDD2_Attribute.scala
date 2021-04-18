@@ -14,7 +14,6 @@ object c_RDD2_Attribute {
    *  - Optionally, a Partitioner for key-value RDDs (e.g. to say that the RDD is hash-partitioned)
    *  - Optionally, a list of preferred locations to compute each split on (e.g. block locations for
    *    an HDFS file)
-   * @param args
    */
   def main(args: Array[String]): Unit = {
     /*
