@@ -63,26 +63,25 @@ object e_RDD4_ProgramMakeRDD {
     number4.saveAsTextFile("output4")
 
     //todo 文件数据的分区
-    //读取文件时的默认分区数量 ： math.min(defaultParallelism, 2) 默认最小分区数量（此处只是设定了最小值，但未必相等）
-    //textFile的第二个参数表示最小分区的数量
-    //start = i * length / partitionNum
-    //end = (i+1)*length / partitionNum
+/*  读取文件时的默认分区数量 ： math.min(defaultParallelism, 2) 默认最小分区数量（此处只是设定了最小值，但未必相等）
+    textFile的第二个参数表示最小分区的数量
+    start = i * length / partitionNum
+    end = (i+1)*length / partitionNum*/
     val file: RDD[String] = sc.textFile("input/aaa.txt")
     file.saveAsTextFile("output_aaa")
 
-/*  todo 在加载数据时，可以设定并行度来设置分区数量
-    spark中读取文件，其实采用的是Hadoop文件读取方式
-    分区数量是多少？
+    //todo 在加载数据时，可以设定并行度来设置分区数量
+/*  spark中读取文件，其实采用的是Hadoop文件读取方式
+    1分区数量是多少？
       spark是不能决定具体的分区数量
       具体的分区数量是由hadoop在读取文件时自动判断的
       文件总字节大小：  totalsize
       每个分区应该读取的字节大小： goalsize = totalsize / num
       如果分区数据没有被除尽，并且余出的部分超过了分区数据量的10%，那么分区数量和设定的最小分区数要大一。
-    每个分区存储数据是什么？
+    2每个分区存储数据是什么？
       Spark不决定数据如何存储，依然是由hadoop决定
       hadoop读取文件是一行一行读取的，不是按照字节的方式
-      hadoop读取数据是按照数据的偏移量读取的，偏移量从0开始的。
-*/
+      hadoop读取数据是按照数据的偏移量读取的，偏移量从0开始的。*/
 
     val rdd: RDD[String] = sc.textFile("input/aaa.txt", 3)
     rdd.saveAsTextFile("output")
