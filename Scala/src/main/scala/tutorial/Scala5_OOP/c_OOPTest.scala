@@ -1,6 +1,5 @@
 package tutorial.Scala5_OOP
 
-import scala.util.chaining.scalaUtilChainingOps
 
 /**
  * @author li478
