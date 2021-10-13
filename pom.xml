@@ -12,6 +12,7 @@
         <module>Scala</module>
         <module>Spark</module>
         <module>Sort</module>
+        <module>workAtHome</module>
     </modules>
 
     <properties>
