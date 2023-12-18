@@ -8,17 +8,13 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Sort" />
         <module name="Spark" />
-        <module name="workAtHome" />
+        <module name="leetCode" />
         <module name="Scala" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="MyTutorial" target="8" />
-      <module name="Scala" target="8" />
-      <module name="Sort" target="8" />
-      <module name="Spark" target="8" />
       <module name="SparkTutorial" target="8" />
-      <module name="workAtHome" target="8" />
+      <module name="workAtHome" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
